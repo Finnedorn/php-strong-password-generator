@@ -15,8 +15,11 @@ function pswGenerator() {
                 $newPsw .= $pswChrt;
             }
         }
-        return $newPsw;
+        $_SESSION['psw'] = $newPsw;
+        header('Location: index.php');
+        die();
     }
+    return false;
 }
 
 ?>

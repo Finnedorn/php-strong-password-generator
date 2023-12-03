@@ -1,15 +1,15 @@
 <?php
 include __DIR__. '/partials/header.php';
 
-if (!isset($_SESSION['auth_token'])) {
+if (empty($_SESSION['psw'])) {
     header('Location: login.php');
-    exit;
+    die();
 }
 ?>
 
 <main class="container">
-    <div>
-        psw gENERATA!
+    <div class="p-3 bg-success w-50 text-light m-auto text-center fs-3 rounded-4 ">
+        La tua Password è : <?php echo $_SESSION['psw'] ?>.
     </div>
 </main>
 

@@ -1,11 +1,15 @@
 <?php
 include __DIR__ ."/partials/header.php";
 include __DIR__.'/functions/functions.php';
-$newPsw = pswGenerator();
-var_dump($newPsw);
+$error = pswGenerator();
 ?>
 
 <main>
+    <?php if($error) { ?>
+        <div class="alert alert-danger">
+            <?php echo $error ?>
+        </div>
+    <?php } ?>
     <div class="container m-auto text-center">
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET" class="d-flex flex-column justify-content-center align-items-center">
             <div>
